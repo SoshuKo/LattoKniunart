@@ -25,7 +25,18 @@ const replacementRules = {
     'gn': "G",
     'ng': "o",
     'gh': "%",
-    's': "$"
+    'ia': "ya",
+    'ai': "ay",
+    'ua': "wa",
+    'au': "aw",
+    'ie': "ye",
+    'ei': "ey",
+    'ue': "we",
+    'eu': "ew",
+    'iú': "yu",
+    'úi': "uy",
+    'uí': "wi",
+    'íu': "iw",
 };
 
 function replaceText() {
