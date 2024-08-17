@@ -1,6 +1,10 @@
 const replacementRules = {
     'p’m': "2",
+    'p’r': "Pr",
+    'p’l': "Pl",
     't’n': "4",
+    't’r': "Tr",
+    't’l': "Tl",
     'k’n': "#",
     'hng': "O",
     'pm': "1",
@@ -36,8 +40,7 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw",
-    's': "$"
+    'íu': "iw"
 };
 
 function replaceText() {
@@ -48,6 +51,7 @@ function replaceText() {
     const sortedRules = Object.keys(replacementRules).sort((a, b) => b.length - a.length);
     
     sortedRules.forEach(key => {
+        // アポストロフィなどの特殊文字を含むキーを正規表現としてエスケープ
         const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
         replacedText = replacedText.replace(regex, replacementRules[key]);
     });
