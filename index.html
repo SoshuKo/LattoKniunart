@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字列置換と表示</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face {
+            font-family: 'Kniunart';
+            src: url('static/Kniunart_05-Regular.otf') format('opentype');
+        }
+        </style>
+        
+</head>
+<body>
+    <h1>文字列置換と表示</h1>
+    <form id="textForm">
+        <label for="inputText">変換する文字列を入力してください:</label>
+        <br>
+        <textarea id="inputText" rows="4" cols="50"></textarea>
+        <br><br>
+        <button type="button" onclick="replaceText()">送信</button>
+    </form>
+    <br>
+    <div id="output" style="font-family: 'Kniunart';"></div>
+
+    <!-- JavaScriptファイルの読み込み -->
+    <script src="script.js"></script>
+</body>
+</html>
