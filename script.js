@@ -37,14 +37,16 @@ const replacementRules = {
     'úi': "uy",
     'uí': "wi",
     'íu': "iw",
+    's': "$"
 };
 
 function replaceText() {
     let inputText = document.getElementById("inputText").value;
     let replacedText = inputText;
 
-    // 置換ルールを長さでソート（長いキーが先に適用されるようにする）
+    // 置換ルールをキーの長さでソート（長いキーが先に適用されるようにする）
     const sortedRules = Object.keys(replacementRules).sort((a, b) => b.length - a.length);
+    
     sortedRules.forEach(key => {
         const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
         replacedText = replacedText.replace(regex, replacementRules[key]);
@@ -52,4 +54,3 @@ function replaceText() {
 
     document.getElementById("output").innerText = replacedText;
 }
-
