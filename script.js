@@ -25,7 +25,7 @@ const replacementRules = {
     'gn': "G",
     'ng': "o",
     'gh': "%",
-    's': "$" // 's' は最後に適用されるように順序を調整
+    's': "$"
 };
 
 function replaceText() {
@@ -35,8 +35,10 @@ function replaceText() {
     // 置換ルールを長さでソート（長いキーが先に適用されるようにする）
     const sortedRules = Object.keys(replacementRules).sort((a, b) => b.length - a.length);
     sortedRules.forEach(key => {
-        replacedText = replacedText.split(key).join(replacementRules[key]);
+        const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+        replacedText = replacedText.replace(regex, replacementRules[key]);
     });
 
     document.getElementById("output").innerText = replacedText;
 }
+
