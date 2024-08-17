@@ -1,5 +1,4 @@
 const replacementRules = {
-    's': '$',
     "p’m": "2",
     "p’": "P",
     "pm": "1",
