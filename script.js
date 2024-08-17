@@ -1,38 +1,38 @@
 const replacementRules = {
-    "p’m": "2",
-    "p’": "P",
-    "pm": "1",
-    "bm": "B",
-    "hm": "M",
-    "t’n": "4",
-    "tn": "3",
-    "t’": "T",
-    "dn": "D",
-    "hn": "N",
-    "hr": "R",
-    "hl": "L",
-    "dz": "Z",
-    "c’": "C",
-    "s’": "S",
-    "ch’": "6",
-    "ch": "5",
-    "j": "J",
-    "sh’": "8",
-    "sh": "7",
-    "zh": "j",
-    "k’n": "#",
-    "kn": "9",
-    "k’": "K",
-    "gn": "G",
-    "hng": "O",
-    "ng": "o",
-    "gh": "%"
+    'p’m': "2",
+    't’n': "4",
+    'k’n': "#",
+    'hng': "O",
+    'pm': "1",
+    'bm': "B",
+    'hm': "M",
+    'tn': "3",
+    'dn': "D",
+    'hn': "N",
+    'hr': "R",
+    'hl': "L",
+    'dz': "Z",
+    'c’': "C",
+    's’': "S",
+    'ch’': "6",
+    'ch': "5",
+    'j': "J",
+    'sh’': "8",
+    'sh': "7",
+    'zh': "j",
+    'k’': "K",
+    'kn': "9",
+    'gn': "G",
+    'ng': "o",
+    'gh': "%",
+    's': "$" // 's' は最後に適用されるように順序を調整
 };
 
 function replaceText() {
     let inputText = document.getElementById("inputText").value;
     let replacedText = inputText;
 
+    // 置換ルールを長さでソート（長いキーが先に適用されるようにする）
     const sortedRules = Object.keys(replacementRules).sort((a, b) => b.length - a.length);
     sortedRules.forEach(key => {
         replacedText = replacedText.split(key).join(replacementRules[key]);
