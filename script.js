@@ -11,13 +11,13 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    'zhl': "Vl",
-    'zhr': "Vr",
-    'zh': "V",
+    'zhl': "__zhl__",  // プレースホルダーに置換
+    'zhr': "__zhr__",  // プレースホルダーに置換
+    'zh': "__zh__",    // プレースホルダーに置換
     'ghl': "%l",
     'ghr': "%r",
-    'p’': "P",  // 置換順序を優先
-    't’': "T",  // 置換順序を優先
+    'p’': "P",
+    't’': "T",
     'pm': "1",
     'bm': "B",
     'hm': "M",
@@ -31,7 +31,6 @@ const replacementRules = {
     's’': "S",
     'ch’': "6",
     'ch': "5",
-    'j': "J",
     'sh’': "8",
     'sh': "7",
     'k’': "K",
@@ -51,9 +50,11 @@ const replacementRules = {
     'úi': "uy",
     'uí': "wi",
     'íu': "iw",
-    'Vl': "jl",
-    'Vr': "jr",
-    'V': "j",
+    'j': "J",  // 通常の j の置換はそのまま
+    // プレースホルダーを元に戻す
+    '__zhl__': "jl",
+    '__zhr__': "jr",
+    '__zh__': "j",
 };
 
 function replaceText() {
