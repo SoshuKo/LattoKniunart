@@ -11,14 +11,12 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    // 一時的に置換されないプレースホルダーを使用
-    'zhl': "Vl",  
-    'zhr': "Vr",  
-    'zh': "V",    
+    'zhl': "jl",
+    'zhr': "jr",
     'ghl': "%l",
     'ghr': "%r",
-    'p’': "P",
-    't’': "T",
+    'p’': "P",  // 置換順序を優先
+    't’': "T",  // 置換順序を優先
     'pm': "1",
     'bm': "B",
     'hm': "M",
@@ -32,9 +30,10 @@ const replacementRules = {
     's’': "S",
     'ch’': "6",
     'ch': "5",
-    'j': "J",  // jを先に変換
+    'j': "J",
     'sh’': "8",
     'sh': "7",
+    'zh': "j",
     'k’': "K",
     'kn': "9",
     'gn': "G",
@@ -51,11 +50,7 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw",
-    // 最後にプレースホルダーを元に戻す
-    'Vl': "jl",
-    'Vr': "jr",
-    'V': "j"  // ここにカンマが抜けていたため追加
+    'íu': "iw"
 };
 
 function replaceText() {
