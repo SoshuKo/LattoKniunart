@@ -11,8 +11,8 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    'zhl': "jl",
-    'zhr': "jr",
+    'zhl': "Vl",
+    'zhr': "Vr",
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",  // 置換順序を優先
@@ -33,7 +33,7 @@ const replacementRules = {
     'j': "J",
     'sh’': "8",
     'sh': "7",
-    'zh': "j",
+    'zh': "V",
     'k’': "K",
     'kn': "9",
     'gn': "G",
@@ -50,7 +50,10 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw"
+    'íu': "iw",
+    'Vl': "jl",
+    'Vr': "jr",
+    'V': "j",
 };
 
 function replaceText() {
