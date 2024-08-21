@@ -11,9 +11,10 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    'zhl': "jl",  // zhlを先に置換
-    'zhr': "jr",  // zhrを先に置換
-    'zh': "j",    // zhを先に置換
+    // 一時的に置換されないプレースホルダーを使用
+    'zhl': "__zhl__",  
+    'zhr': "__zhr__",  
+    'zh': "__zh__",    
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",
@@ -31,7 +32,7 @@ const replacementRules = {
     's’': "S",
     'ch’': "6",
     'ch': "5",
-    'j': "J",  // jの置換を後に処理
+    'j': "J",  // jを先に変換
     'sh’': "8",
     'sh': "7",
     'k’': "K",
@@ -50,7 +51,11 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw"
+    'íu': "iw",
+    // 最後にプレースホルダーを元に戻す
+    '__zh__': "j",
+    '__zhl__': "jl",
+    '__zhr__': "jr"
 };
 
 function replaceText() {
