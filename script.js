@@ -13,6 +13,7 @@ const replacementRules = {
     'shr': "7r",
     'zhl': "Vl",
     'zhr': "Vr",
+    'zh': "V",
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",  // 置換順序を優先
@@ -33,7 +34,6 @@ const replacementRules = {
     'j': "J",
     'sh’': "8",
     'sh': "7",
-    'zh': "V",
     'k’': "K",
     'kn': "9",
     'gn': "G",
