@@ -12,9 +12,9 @@ const replacementRules = {
     'shl': "7l",
     'shr': "7r",
     // 一時的に置換されないプレースホルダーを使用
-    'zhl': "__zhl__",  
-    'zhr': "__zhr__",  
-    'zh': "__zh__",    
+    'zhl': "@l",  
+    'zhr': "@r",  
+    'zh': "@",    
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",
@@ -53,9 +53,9 @@ const replacementRules = {
     'uí': "wi",
     'íu': "iw",
     // 最後にプレースホルダーを元に戻す
-    '__zh__': "j",
-    '__zhl__': "jl",
-    '__zhr__': "jr"
+    '@l': "jl",
+    '@r': "jr"
+    '@': "j"
 };
 
 function replaceText() {
