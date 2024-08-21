@@ -11,9 +11,9 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    'zhl': "jl",  
-    'zhr': "jr",  
-    'zh': "j",    
+    'Vl': "jl",  
+    'Vr': "jr",  
+    'V': "j",    
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",
@@ -50,7 +50,10 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw"
+    'íu': "iw",
+    'Vl': "jl",  
+    'Vr': "jr",  
+    'V': "j"
 };
 
 function replaceText() {
