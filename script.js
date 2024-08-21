@@ -12,9 +12,9 @@ const replacementRules = {
     'shl': "7l",
     'shr': "7r",
     // 一時的に置換されないプレースホルダーを使用
-    'zhl': "@l",  
-    'zhr': "@r",  
-    'zh': "@",    
+    'zhl': "Vl",  
+    'zhr': "Vr",  
+    'zh': "V",    
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",
@@ -53,9 +53,9 @@ const replacementRules = {
     'uí': "wi",
     'íu': "iw",
     // 最後にプレースホルダーを元に戻す
-    '@l': "jl",
-    '@r': "jr",
-    '@': "j"  // ここにカンマが抜けていたため追加
+    'Vl': "jl",
+    'Vr': "jr",
+    'V': "j"  // ここにカンマが抜けていたため追加
 };
 
 function replaceText() {
