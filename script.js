@@ -49,8 +49,6 @@ const replacementRules = {
     'úi': "uy",
     'uí': "wi",
     'íu': "iw",
-    'Vl': "jl",  
-    'Vr': "jr",  
     'V': "j"
 };
 
