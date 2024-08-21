@@ -11,12 +11,11 @@ const replacementRules = {
     'chr': "5r",
     'shl': "7l",
     'shr': "7r",
-    'zhl': "jl",
-    'zhr': "jr",
+    'zhl': "jl",  // zhlを先に置換
+    'zhr': "jr",  // zhrを先に置換
+    'zh': "j",    // zhを先に置換
     'ghl': "%l",
     'ghr': "%r",
-    // zhを一時的に異なる文字に置換
-    'zh': "__zh_to_j__",  
     'p’': "P",
     't’': "T",
     'pm': "1",
@@ -32,8 +31,7 @@ const replacementRules = {
     's’': "S",
     'ch’': "6",
     'ch': "5",
-    // jの置換はzh置換後の文字に影響を与えないように
-    'j': "J", 
+    'j': "J",  // jの置換を後に処理
     'sh’': "8",
     'sh': "7",
     'k’': "K",
@@ -52,9 +50,7 @@ const replacementRules = {
     'iú': "yu",
     'úi': "uy",
     'uí': "wi",
-    'íu': "iw",
-    // 最後にzhをjに戻す
-    '__zh_to_j__': "j"
+    'íu': "iw"
 };
 
 function replaceText() {
