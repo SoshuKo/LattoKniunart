@@ -54,8 +54,8 @@ const replacementRules = {
     'íu': "iw",
     // 最後にプレースホルダーを元に戻す
     '@l': "jl",
-    '@r': "jr"
-    '@': "j"
+    '@r': "jr",
+    '@': "j"  // ここにカンマが抜けていたため追加
 };
 
 function replaceText() {
