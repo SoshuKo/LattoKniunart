@@ -3,29 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>クニューン文字変換機ver.1.15</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Text Replacement with Custom Fonts</title>
     <style>
         @font-face {
-            font-family: 'Kniunart';
-            src: url('static/Kniunart_05-Regular.otf') format('opentype');
+            font-family: 'Kniunart05';
+            src: url('Kniunart_05-Regular.otf') format('opentype');
         }
-        </style>
-        
+        @font-face {
+            font-family: 'Kniunart01';
+            src: url('kniunart01.ttf') format('truetype');
+        }
+        .output {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>クニューン文字変換機ver.1.15</h1>
-    <form id="textForm">
-        <label for="inputText">変換する文字列を入力してください:</label>
-        <br>
-        <textarea id="inputText" rows="4" cols="50"></textarea>
-        <br><br>
-        <button type="button" onclick="replaceText()">送信</button>
-    </form>
-    <br>
-    <div id="output" style="font-family: 'Kniunart';"></div>
+    <h1>Text Replacement with Custom Fonts</h1>
+    <textarea id="inputText" rows="4" cols="50" placeholder="テキストを入力"></textarea><br>
+    <label for="fontSelect">フォントを選択:</label>
+    <select id="fontSelect">
+        <option value="Kniunart05">Kniunart_05-Regular.otf</option>
+        <option value="Kniunart01">kniunart01.ttf</option>
+    </select><br>
+    <button onclick="replaceText()">変換</button>
+    <div id="output" class="output"></div>
 
-    <!-- JavaScriptファイルの読み込み -->
     <script src="script.js"></script>
 </body>
 </html>
