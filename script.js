@@ -10,8 +10,8 @@ const replacementRules = {
     'chl': "5l",
     'chr': "5r",
     'shl': "7l",
-    'shr': "7r",  
-    'zh': "V",
+    'shr': "7r",
+    'zh': "V",  // 一時的に置換されないプレースホルダーとして "V" を使用
     'ghl': "%l",
     'ghr': "%r",
     'p’': "P",
@@ -29,7 +29,7 @@ const replacementRules = {
     's’': "S",
     'ch’': "6",
     'ch': "5",
-    'j': "J",  // 通常の j の置換はそのまま
+    'j': "J",  // 通常の j の置換
     'sh’': "8",
     'sh': "7",
     'k’': "K",
@@ -49,12 +49,8 @@ const replacementRules = {
     'úi': "uy",
     'uí': "wi",
     'íu': "iw",
+    // 最後にプレースホルダー "V" を元に戻す
     'V': "j"
-};
-
-const replacementRules = {
-    // 置換ルール（省略）
-    // 必要に応じてここにルールを追加してください
 };
 
 function replaceText() {
