@@ -52,6 +52,11 @@ const replacementRules = {
     'V': "j"
 };
 
+const replacementRules = {
+    // 置換ルール（省略）
+    // 必要に応じてここにルールを追加してください
+};
+
 function replaceText() {
     let inputText = document.getElementById("inputText").value;
     let replacedText = inputText;
@@ -60,10 +65,13 @@ function replaceText() {
     const sortedRules = Object.keys(replacementRules).sort((a, b) => b.length - a.length);
     
     sortedRules.forEach(key => {
-        // アポストロフィなどの特殊文字を含むキーを正規表現としてエスケープ
         const regex = new RegExp(key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
         replacedText = replacedText.replace(regex, replacementRules[key]);
     });
 
-    document.getElementById("output").innerText = replacedText;
+    const selectedFont = document.getElementById("fontSelect").value;
+    const outputDiv = document.getElementById("output");
+    
+    outputDiv.style.fontFamily = selectedFont;
+    outputDiv.innerText = replacedText;
 }
